@@ -1,0 +1,8 @@
+# System File
+.DS_Store
+
+# Temp
+tmp
+
+# Output
+public/
