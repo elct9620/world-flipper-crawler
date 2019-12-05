@@ -13,7 +13,7 @@ deploy:
   skip_cleanup: true
   keep_history: true
   github_token: $GITHUB_TOKEN
-  local_dir: gh-pages
+  local_dir: public
   fqdn: world-flipper.aotoki.dev
   on:
     branch: master
