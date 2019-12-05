@@ -9,3 +9,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "rubyzip", "~> 2.0", require: 'zip'
 
 gem "iconv", "~> 1.0"
+
+gem "oj", "~> 3.10"

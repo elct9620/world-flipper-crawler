@@ -39,6 +39,7 @@ module Collector
       entry
         .get_input_stream
         .read
+        .force_encoding('UTF-8')
         .scan(ROW_RULE)
         .drop(2)
     end

@@ -13,4 +13,4 @@ FileUtils.mkdir('tmp') unless File.exist?('tmp')
 FileUtils.mkdir('public') unless File.exist?('public')
 
 puts 'Processing weapons.json'
-File.write('public/weapons.json', Collector::Weapon.new.to_a)
+File.write('public/weapons.json', Collector::Weapon.new.to_a.to_json)

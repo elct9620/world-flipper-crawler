@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     iconv (1.0.8)
+    oj (3.10.0)
     rubyzip (2.0.0)
 
 PLATFORMS
@@ -9,6 +10,7 @@ PLATFORMS
 
 DEPENDENCIES
   iconv (~> 1.0)
+  oj (~> 3.10)
   rubyzip (~> 2.0)
 
 BUNDLED WITH
