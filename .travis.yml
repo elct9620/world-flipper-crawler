@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.6
+
+before_install:
+  - bundle install
+
+script:
+  - ./bin/collector
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: gh-pages
+  fqdn: world-flipper.aotoki.dev
+  on:
+    branch: master
