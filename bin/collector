@@ -4,13 +4,13 @@
 
 require 'json'
 
-require_relative '../environment'
+require_relative '../crawler/environment'
 
 # TODO: Support other sources
 require 'collector/weapon'
 
 FileUtils.mkdir('tmp') unless File.exist?('tmp')
-FileUtils.mkdir('public') unless File.exist?('public')
+FileUtils.mkdir_p('public/api') unless File.exist?('public/api')
 
 puts 'Processing weapons.json'
-File.write('public/weapons.json', Collector::Weapon.new.to_a.to_json)
+File.write('public/api/weapons.json', Collector::Weapon.new.to_a.to_json)

@@ -1,19 +1,27 @@
 language: ruby
 rvm:
   - 2.6
+node_js: 12.9.1
+cache:
+  - bundler
+  - yarn
 
 before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$PATH"
   - bundle install
+  - yarn install
 
 script:
   - ./bin/collector
+  - yarn build
 
 deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
   github_token: $GITHUB_TOKEN
-  local_dir: public
+  local_dir: dist
   fqdn: world-flipper.aotoki.dev
   on:
     branch: master
