@@ -22,6 +22,6 @@ deploy:
   keep_history: true
   github_token: $GITHUB_TOKEN
   local_dir: dist
-  fqdn: world-flipper.aotoki.dev
+  fqdn: wf.is-ga.me
   on:
     branch: master
