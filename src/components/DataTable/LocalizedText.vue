@@ -7,12 +7,13 @@ export default {
   name: 'DataTable.LocalizedText',
   props: {
     column: Object,
-    row: Object
+    cell: String,
+    selected: Boolean,
+    allSelected: Boolean
   },
   computed: {
     text() {
-      const value = this.row[this.column.name]
-      return value.zh || value.ja
+      return this.cell.zh || this.cell.ja
     }
   }
 }

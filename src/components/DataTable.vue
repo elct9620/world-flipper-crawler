@@ -1,18 +1,13 @@
 <template>
-  <table class="uk-table uk-table-divider">
-    <thead>
-      <tr>
-        <th v-for="column in columns" :key="column.name" :class="column.class">{{ column.label }}</th>
-      </tr>
-    </thead>
-    <tr v-for="(item, idx) in items" :key="idx">
-      <td v-for="column in columns" :key="column.name">
-        <component :is="column.type || 'span'" :column="column" :row="item">
-          {{ item[column.name] }}
-        </component>
-      </td>
-    </tr>
-  </table>
+  <vk-table :data="items">
+    <vk-table-column  v-for="column in columns" :key="column.name" :title="column.label" :cell="column.name">
+      <slot slot-scope="{ cell, selected, allSelected }">
+      <component :is="column.type || 'span'" :column="column" v-bind="{ cell, selected, allSelected }">
+        {{ cell }}
+      </component>
+      </slot>
+    </vk-table-column>
+  </vk-table>
 </template>
 
 <script>

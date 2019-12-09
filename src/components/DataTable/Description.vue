@@ -11,11 +11,13 @@ export default {
   name: 'DataTable.Description',
   props: {
     column: Object,
-    row: Object
+    cell: String,
+    selected: Boolean,
+    allSelected: Boolean
   },
   computed: {
     descriptions() {
-      return this.row[this.column.name]
+      return this.cell
     }
   }
 }
