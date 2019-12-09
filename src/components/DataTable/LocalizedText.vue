@@ -7,7 +7,7 @@ export default {
   name: 'DataTable.LocalizedText',
   props: {
     column: Object,
-    cell: String,
+    cell: Object,
     selected: Boolean,
     allSelected: Boolean
   },

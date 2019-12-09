@@ -12,7 +12,10 @@ const  state = () => {
 
 const mutations = {
   [types.UPDATE] (state, items) {
-    state.items = Array.from(items)
+    state.items =
+      Array
+      .from(items)
+      .map((item, id) => Object.assign(item, { id }))
   }
 }
 

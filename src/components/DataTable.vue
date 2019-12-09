@@ -1,12 +1,17 @@
 <template>
-  <vk-table :data="items">
-    <vk-table-column  v-for="column in columns" :key="column.name" :title="column.label" :cell="column.name">
+  <vk-table :data="sortedItems" :sorted-by.sync="sortedBy" cellMiddle>
+    <component :is="column.sortable ? 'vk-table-column-sort' : 'vk-table-column'"
+      v-for="column in columns"
+      :key="column.name"
+      :title="column.label"
+      :cell="column.name"
+      >
       <slot slot-scope="{ cell, selected, allSelected }">
       <component :is="column.type || 'span'" :column="column" v-bind="{ cell, selected, allSelected }">
         {{ cell }}
       </component>
       </slot>
-    </vk-table-column>
+    </component>
   </vk-table>
 </template>
 
@@ -19,6 +24,7 @@ export default {
   name: 'DataTable',
   data() {
     return {
+      sortedBy: { rank: 'desc' }
     }
   },
   components: {
@@ -29,6 +35,17 @@ export default {
   props: {
     items: Array,
     columns: Array
+  },
+  computed: {
+    sortedItems() {
+      const column = Object.keys(this.sortedBy)[0] // Support one sort column for now
+      let items = Array.from(this.items).sort((a, b) => a[column] - b[column])
+      if (this.sortedBy[column] == 'desc') {
+        items.reverse()
+      }
+
+      return items
+    }
   }
 }
 </script>

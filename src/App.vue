@@ -15,14 +15,14 @@ export default {
       columns: [
         { name: 'icon', class: 'uk-table-shrink', type: 'Icon' },
         { name: 'name', label: '名稱', type: 'LocalizedText' },
-        { name: 'rank', label: '星級' },
+        { name: 'rank', label: '星級', sortable: true },
         { name: 'element', label: '屬性' },
         { name: 'effects', label: '效果', type: 'Description' },
         { name: 'max_effects', label: 'MAX 效果', type: 'Description' },
-        { name: 'hp', label: 'HP' },
-        { name: 'atk', label: 'ATK' },
-        { name: 'max_hp', label: 'MAX HP' },
-        { name: 'max_atk', label: 'MAX ATK' },
+        { name: 'hp', label: 'HP', sortable: true },
+        { name: 'atk', label: 'ATK', sortable: true },
+        { name: 'max_hp', label: 'MAX HP', sortable: true },
+        { name: 'max_atk', label: 'MAX ATK', sortable: true },
         { name: 'sources', label: '獲取途徑', type: 'Description' },
       ]
     }

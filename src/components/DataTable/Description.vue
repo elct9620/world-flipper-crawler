@@ -11,7 +11,7 @@ export default {
   name: 'DataTable.Description',
   props: {
     column: Object,
-    cell: String,
+    cell: Array,
     selected: Boolean,
     allSelected: Boolean
   },
