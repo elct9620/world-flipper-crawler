@@ -24,7 +24,7 @@ export default {
   name: 'DataTable',
   data() {
     return {
-      sortedBy: { rank: 'desc' }
+      sortedBy: { id: 'asc' }
     }
   },
   components: {

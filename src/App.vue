@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       columns: [
+        { name: 'id', label: 'ID', sortable: true },
         { name: 'icon', class: 'uk-table-shrink', type: 'Icon' },
         { name: 'name', label: '名稱', type: 'LocalizedText' },
         { name: 'rank', label: '星級', sortable: true },
