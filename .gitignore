@@ -25,3 +25,7 @@ yarn-error.log*
 
 # API
 /public/api
+
+# Generated
+/public/manifest.json
+/public/firebase-messaging-sw.js

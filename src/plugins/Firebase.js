@@ -36,6 +36,15 @@ class FirebasePlugin {
       // TODO: On block push message
     }
   }
+
+  async getToken() {
+    try {
+      let currentToken = await this.messaging.getToken()
+      return currentToken
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 export default FirebasePlugin

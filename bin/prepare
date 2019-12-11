@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'erb'
+
+ENV_FILES = [
+  '.env',
+  '.env.local'
+].freeze
+
+ENV_FILES.each do |file|
+  next unless File.exist?(file)
+
+  File.readlines(file).each do |line|
+    key, value = line.split('=')
+    ENV[key] = value.strip if ENV[key].nil?
+  end
+end
+
+TEMPLATES = ['manifest.json', 'firebase-messaging-sw.js'].freeze
+
+TEMPLATES.each do |name|
+  puts "Create #{name}"
+  template = ERB.new(File.read("template/#{name}.erb"))
+  File.write("public/#{name}", template.result(binding))
+end
