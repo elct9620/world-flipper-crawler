@@ -28,6 +28,10 @@ export default {
       // TODO: Allow set multiple sources
       dataSource: 'https://docs.google.com/spreadsheets/d/1rpdOVhqE8NBQx23zUMq-KRWAU2LCwg6toPXj0xzqgD4'
     }
+  },
+  created() {
+    this.$firebase.setVapidKey(process.env.VUE_APP_VAPID_KEY)
+    this.$firebase.requestPushPermission()
   }
 }
 </script>
